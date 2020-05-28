@@ -1,0 +1,10 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/.vs
+/Integrations/.vs/Integrations/v16
+/Integrations/Integrations.Test/bin/Debug/netcoreapp3.0
+/Integrations/Integrations.Test/obj
+/Integrations/Integrations.Protheus/bin/Debug/netcoreapp3.0
+/Integrations/Integrations.Protheus/obj

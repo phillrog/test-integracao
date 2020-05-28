@@ -1,0 +1,44 @@
+﻿{
+	"FATURAS": [
+		{
+			"E1_FILDEB": "570",
+			"E1_PREFIXO": "20M",
+			"E1_NUM": "000007554",
+			"E1_TIPO": "FAT",
+			"E1_PARCELA": "01",
+			"CNPJ": "13986197000121",
+			"E1_EMISSAO": "20200526",
+			"E1_VENCTO": "20210212",
+			"E1_VENCREA": "20210212",
+			"E1_VALOR": "522.22",
+			"E1_ACRESC": "0",
+			"E1_DECRESC": "0",
+			"E1_JUROS": "0",
+			"E1_MULTA": "0",
+			"E1_SALDO": "522.22",
+			"E1_BAIXA": "        ",
+			"E1_SITUACA": "0 - Carteira                                               ",
+			"E1_ZZTPOPE": " ",
+			"E1_ZZSTCAR": " ",
+			"ST_PERIODO": "S",
+			"ST_TITULO": "S",
+			"ST_CARTEIRA": "S",
+			"ST_CARTORIO": "S",
+			"ST_RENEGOCIACAO": "N",
+			"VALACESSORIOS": [
+				{
+					"CODVAL": "987",
+					"DESC": "CARTAIO IEPTB",
+					"VALMOV": 12
+				},
+				{
+					"CODVAL": "1000",
+					"DESC": "DESPESA BANC�RIA",
+					"VALMOV": 2.8
+				}
+			],
+			"CTE": []
+		}
+	],
+	"COUNT": 1
+}
