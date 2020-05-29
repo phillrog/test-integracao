@@ -8,13 +8,14 @@ namespace Integrations.Test
 {
 	public class Protheus
 	{
-		private const string jsonNumeroFatura = @"Responses\NumeroFatura.json";
-		private const string jsonNumeroFatura2 = @"Responses\NumeroFatura2.json";
+		private const string JSONNUMEROFATURA = @"Responses\NumeroFatura.json";
+		private const string JSONNUMEROFATURA2 = @"Responses\NumeroFatura2.json";
+		private const string JSONRAIZCNPJ = @"Responses\RaizCnpj.json";
 
 		[Fact]
 		public void DeveCarregarNumeroFatura()
 		{
-			using (StreamReader r = new StreamReader(jsonNumeroFatura))
+			using (StreamReader r = new StreamReader(JSONNUMEROFATURA))
 			{
 				string json = r.ReadToEnd();
 				Assert.NotNull(json);
@@ -24,7 +25,7 @@ namespace Integrations.Test
 		[Fact]
 		public void DeveCarregarNumeroFatura2()
 		{
-			using (StreamReader r = new StreamReader(jsonNumeroFatura2))
+			using (StreamReader r = new StreamReader(JSONNUMEROFATURA2))
 			{
 				string json = r.ReadToEnd();
 				Assert.NotNull(json);
@@ -34,7 +35,7 @@ namespace Integrations.Test
 		[Fact]
 		public void DeveDeserializarResponseJsonNumeroFatura()
 		{
-			using (StreamReader r = new StreamReader(jsonNumeroFatura))
+			using (StreamReader r = new StreamReader(JSONNUMEROFATURA))
 			{
 				string json = r.ReadToEnd();
 				var objeto = JsonConvert.DeserializeObject<InvoiceStatusResponse>(json);
@@ -47,7 +48,7 @@ namespace Integrations.Test
 		[Fact]
 		public void DeveDeserializarValorAcessoriosResponseJsonNumeroFatura()
 		{
-			using (StreamReader r = new StreamReader(jsonNumeroFatura))
+			using (StreamReader r = new StreamReader(JSONNUMEROFATURA))
 			{
 				string json = r.ReadToEnd();
 				var objeto = JsonConvert.DeserializeObject<InvoiceStatusResponse>(json);
@@ -61,7 +62,7 @@ namespace Integrations.Test
 		[Fact]
 		public void DeveDeserializarCTEResponseJsonNumeroFatura()
 		{
-			using (StreamReader r = new StreamReader(jsonNumeroFatura2))
+			using (StreamReader r = new StreamReader(JSONNUMEROFATURA2))
 			{
 				string json = r.ReadToEnd();
 				var objeto = JsonConvert.DeserializeObject<InvoiceStatusResponse>(json);
@@ -75,7 +76,7 @@ namespace Integrations.Test
 		[Fact]
 		public void DeveDeserializarOsNovosCamposDoResponseJsonNumeroFatura()
 		{
-			using (StreamReader r = new StreamReader(jsonNumeroFatura2))
+			using (StreamReader r = new StreamReader(JSONNUMEROFATURA2))
 			{
 				string json = r.ReadToEnd();
 				var objeto = JsonConvert.DeserializeObject<InvoiceStatusResponse>(json);
@@ -91,6 +92,29 @@ namespace Integrations.Test
 				Assert.True(freights.Count > 0);
 				Assert.True(freights[0].Status.Length > 0);
 				Assert.True(freights[0].Key.Length > 10);
+			}
+		}
+
+
+		[Fact]
+		public void DeveCarregarRaizCnpj()
+		{
+			using (StreamReader r = new StreamReader(JSONRAIZCNPJ))
+			{
+				string json = r.ReadToEnd();
+				Assert.NotNull(json);
+			}
+		}
+
+		[Fact]
+		public void DeveCarregarTodasAs56Faturas()
+		{
+			using (StreamReader r = new StreamReader(JSONRAIZCNPJ))
+			{
+				string json = r.ReadToEnd();
+				var objeto = JsonConvert.DeserializeObject<InvoiceStatusResponse>(json);
+
+				Assert.True(objeto.Count == 56);
 			}
 		}
 	}
